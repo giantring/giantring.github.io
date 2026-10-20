@@ -2,7 +2,7 @@
 
 **초속변형 자이로제타 알바로스의 날개** (3DS) 비공식 팬 번역 패치 안내 페이지입니다.
 
-🔗 **https://giantring.github.io/MILES-TAILS-PROWER/**
+🔗 **https://giantring.github.io/**
 
 ## 판 구성
 

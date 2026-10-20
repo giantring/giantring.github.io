@@ -2,7 +2,7 @@
    설정 — 배포할 때 여기만 고치면 된다
    ============================================================ */
 const CONFIG = {
-  repo: 'giantring/MILES-TAILS-PROWER',                                 // GitHub 계정/저장소
+  repo: 'giantring/giantring.github.io',                                   // GitHub 계정/저장소
   report: 'https://x.com/giantring9275',       // 제보 받을 곳. 비우면 버튼이 숨는다
   credits: [                                            // 만든 사람
     { name: '자트', role: { ko: '번역·검수', ja: '翻訳・校正', en: 'Translation & QA' } },
