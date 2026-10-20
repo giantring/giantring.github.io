@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gyrozetter Translation Patch</title>
+<meta name="description" content="초속변형 자이로제타 알바로스의 날개 (3DS) 비공식 한국어·영문 패치">
+<meta name="theme-color" content="#7a0d14">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <a class="mark" href="#start">
+    <img class="mark-logo" src="assets/img/logo.webp" alt="초속변형 자이로제타 알바로스의 날개" width="310" height="180">
+    <span><b>GYROZETTER</b><small>FAN TRANSLATION</small></span>
+  </a>
+  <div class="bar-spacer"></div>
+  <div class="speedo" aria-hidden="true"><span>PROGRESS</span><span class="speedo-track"><i id="speedoFill"></i></span><b id="speedoVal">0</b></div>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-lang="ko">KO</button><button type="button" data-lang="ja">JA</button><button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<nav class="laps" aria-label="sections">
+  <a href="#grid" data-sec="grid"><span>GRID</span><i></i></a>
+  <a href="#pit" data-sec="pit"><span>PIT</span><i></i></a>
+  <a href="#course" data-sec="course"><span>COURSE</span><i></i></a>
+  <a href="#radio" data-sec="radio"><span>RADIO</span><i></i></a>
+</nav>
+
+<main>
+
+<!-- ───── 출발선 ───── -->
+<section class="start" id="start">
+  <div class="speedlines" aria-hidden="true" id="speedlines"></div>
+  <div class="start-art" aria-hidden="true"><img src="assets/img/hero.jpg" alt="" data-optional></div>
+  <div class="wrap start-in">
+    <span class="start-tag"><b></b><span data-i18n="start.tag">NINTENDO 3DS · UNOFFICIAL</span></span>
+    <h1><em class="hud" data-i18n="start.em">Hyper Speed Transform</em><span data-i18n="start.title">초속변형 자이로제타<br>알바로스의 날개</span></h1>
+    <p class="sub" data-i18n="start.sub"></p>
+    <div class="start-cta">
+      <a class="go" href="#grid"><span data-i18n="start.cta">패치 받기</span><svg viewBox="0 0 24 24" width="16" height="16"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      <a class="go line" href="#pit" data-i18n="start.cta2">설치 방법</a>
+    </div>
+</div>
+  </div>
+</section>
+
+<!-- ───── 01 GRID ───── -->
+<section class="block" id="grid">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">01</span>
+      <span class="sec-code">STARTING GRID</span>
+      <h2 data-i18n="grid.title">판 고르기</h2>
+      <p class="sec-lead" data-i18n="grid.lead"></p>
+    </div>
+    <div class="grid-head" aria-hidden="true">
+      <span>POS</span><span>EDITION</span><span>LANG</span><span>COVERAGE</span><span>VER</span><span>SIZE</span><span></span>
+    </div>
+    <div id="rows"></div>
+  </div>
+</section>
+
+<!-- ───── 02 PIT ───── -->
+<section class="block" id="pit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">02</span>
+      <span class="sec-code">PIT GUIDE</span>
+      <h2 data-i18n="pit.title">설치하기</h2>
+      <p class="sec-lead" data-i18n="pit.lead"></p>
+    </div>
+    <div class="pit">
+      <aside class="pit-side">
+        <div class="toggle" role="tablist">
+          <button type="button" data-plat="hw"><small>HARDWARE</small><span data-i18n="plat.hw">3DS 실기</span></button>
+          <button type="button" data-plat="emu"><small>EMULATOR</small><span data-i18n="plat.emu">에뮬레이터</span></button>
+        </div>
+        <div class="panel">
+          <h4>SPEC SHEET</h4>
+          <div class="kv"><span data-i18n="req.game">게임</span><b data-i18n="req.game.v"></b></div>
+          <div class="kv"><span data-i18n="req.code">제품 코드</span><b><code>CTR-P-ABCJ</code></b></div>
+          <div class="kv"><span data-i18n="req.tid">타이틀 ID</span><b><code>0004000000059C00</code></b></div>
+          <div class="kv" data-plat-only="hw"><span data-i18n="req.dev">기기</span><b data-i18n="req.dev.hw"></b></div>
+          <div class="kv" data-plat-only="emu"><span data-i18n="req.dev">기기</span><b>Azahar / Citra</b></div>
+        </div>
+      </aside>
+      <div>
+        <ol class="laps-list" id="laps"></ol>
+        <div class="flag">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+          <p data-i18n="pit.switch"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── 03 COURSE ───── -->
+<section class="block" id="course">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">03</span>
+      <span class="sec-code">COURSE · NO SPOILERS</span>
+      <h2 data-i18n="course.title">줄거리</h2>
+      <p class="sec-lead" data-i18n="course.lead"></p>
+    </div>
+    <div class="course" id="checkpoints"></div>
+
+    <article class="driver reveal">
+      <div class="driver-art"><img src="assets/img/driver.webp" alt="" width="496" height="994" loading="lazy"></div>
+      <div class="driver-body">
+        <span class="driver-code">DRIVER PROFILE</span>
+        <h3 data-i18n="drv.name">쿠도 유우키</h3>
+        <p class="driver-alt" data-i18n="drv.alt"></p>
+        <p class="driver-desc" data-i18n="drv.desc"></p>
+        <dl class="spec" id="drvSpec"></dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ───── 04 RADIO ───── -->
+<section class="block" id="radio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-no">04</span>
+      <span class="sec-code">TEAM RADIO</span>
+      <h2 data-i18n="radio.title">자주 묻는 질문</h2>
+    </div>
+    <div class="radio" id="faq"></div>
+    <div class="report" id="report">
+      <div><h4 data-i18n="rep.title"></h4><p data-i18n="rep.desc"></p></div>
+      <a class="go" id="reportBtn"><span data-i18n="rep.btn">제보하기</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="finish">
+  <div class="wrap">
+    <div class="crew" id="crew"></div>
+    <p data-i18n="foot.disc"></p>
+    <p data-i18n="foot.img"></p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

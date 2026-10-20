@@ -2,7 +2,7 @@
 
 **초속변형 자이로제타 알바로스의 날개** (3DS) 비공식 팬 번역 패치 안내 페이지입니다.
 
-🔗 **https://giantring.github.io/**
+🔗 **https://giantring.github.io/patch/**
 
 ## 판 구성
 
@@ -21,14 +21,17 @@
 ## 디렉토리 구조
 
 ```
-index.html          페이지 본문
-assets/css/style.css  스타일
-assets/js/main.js     판 정보·문구(KO/JA/EN)·동작
-assets/img/           이미지
+index.html                  루트 (지금은 /patch/로 이동)
+patch/index.html            패치 페이지 본문
+patch/assets/css/style.css  스타일
+patch/assets/js/main.js     판 정보·문구(KO/JA/EN)·동작
+patch/assets/img/           이미지
 ```
 
-새 버전을 올릴 때는 `assets/js/main.js` 상단의 `EDITIONS` 항목(ver·tag·file·size·sha·url)만 고치면 됩니다.
-`assets/img/`에 `hero.jpg`, `miles.jpg`, `tails.jpg`, `prower.jpg`, `favicon.png`를 넣으면 페이지에 자동으로 표시됩니다.
+다른 페이지는 `폴더명/index.html`로 추가하면 `https://giantring.github.io/폴더명/`으로 열립니다.
+
+새 버전을 올릴 때는 `patch/assets/js/main.js` 상단의 `EDITIONS` 항목(ver·tag·file·size·sha·url)만 고치면 됩니다.
+`patch/assets/img/`에 `hero.jpg`, `miles.jpg`, `tails.jpg`, `prower.jpg`, `favicon.png`를 넣으면 페이지에 자동으로 표시됩니다.
 
 ## 오류 제보
 
