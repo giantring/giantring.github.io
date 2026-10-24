@@ -49,7 +49,7 @@ const I18N = {
    [
     "악의 조직 제논",
     "자이로제타 전쟁",
-    "40년 전, 악의 조직 \"제논\"에 의하여 큰 전쟁이 벌어졌다. 자이로제타는 그때 병기로 쓰였고, 전쟁이 끝난 지금도 자이로제타를 곱게 보지 않는 사람들이 있다."
+    "7년 전, 악의 조직 \"제논\"에 의하여 큰 전쟁이 벌어졌다. 자이로제타는 그때 병기로 쓰였고, 전쟁이 끝난 지금도 자이로제타를 곱게 보지 않는 사람들이 있다."
    ],
    [
     "이야기의 시작",
@@ -188,7 +188,7 @@ const I18N = {
    [
     "悪の組織ゼノン",
     "ジャイロゼッター戦争",
-    "40年前、悪の組織「ゼノン」によって大きな戦争が起きた。ジャイロゼッターはそのとき兵器として使われ、戦争が終わった今も、ジャイロゼッターをよく思わない人々がいる。"
+    "7年前、悪の組織「ゼノン」によって大きな戦争が起きた。ジャイロゼッターはそのとき兵器として使われ、戦争が終わった今も、ジャイロゼッターをよく思わない人々がいる。"
    ],
    [
     "物語のはじまり",
@@ -327,7 +327,7 @@ const I18N = {
    [
     "Evil organization Xenon",
     "The Gyrozetter War",
-    "Forty years ago the evil organization \"Xenon\" started a great war, and Gyrozetters were used as weapons. Even now that the war is over, some people still look at Gyrozetters with suspicion."
+    "Seven years ago the evil organization \"Xenon\" started a great war, and Gyrozetters were used as weapons. Even now that the war is over, some people still look at Gyrozetters with suspicion."
    ],
    [
     "Where it begins",
