@@ -19,6 +19,7 @@ const EDITIONS = [
     sha: 'ca897b743f46d47198905bda67c7a8d97dcbbda44954ddcdbd1f6a9bf539c4c9', img: 'assets/img/miles.jpg' },
   { id: 'tails',  code: 'TAILS',  lang: 'ko', ver: null, soon: true, img: 'assets/img/tails.jpg' },
   { id: 'prower', code: 'PROWER', lang: 'en', ver: 'v13.8',
+    review: true,
     tag: 'prower-v13.8', file: 'gyrozetter_en_PROWER_v13.8.zip', size: '2.5 MB', cover: 100,
     url: 'https://drive.google.com/file/d/1T-kpzbnxDKaeVt1PY6KW5IYk6-00tXrv/view?usp=drivesdk',   // 외부 링크가 있으면 GitHub 대신 이곳으로 연결
     sha: '447b30a88ddb15d507c052c56ce4f7065a8a193be6a9a25668760a92b5d719b7', img: 'assets/img/prower.jpg' },
@@ -77,6 +78,7 @@ const I18N = {
   "lang.ko": "한국어",
   "lang.en": "English",
   "soon": "준비 중",
+  "review": "검수 중",
   "dl": "다운로드",
   "plat.hw": "3DS 실기",
   "plat.emu": "에뮬레이터",
@@ -216,6 +218,7 @@ const I18N = {
   "lang.ko": "韓国語",
   "lang.en": "英語",
   "soon": "準備中",
+  "review": "校正中",
   "dl": "ダウンロード",
   "plat.hw": "3DS 実機",
   "plat.emu": "エミュレーター",
@@ -355,6 +358,7 @@ const I18N = {
   "lang.ko": "Korean",
   "lang.en": "English",
   "soon": "Coming soon",
+  "review": "In review",
   "dl": "Download",
   "plat.hw": "3DS hardware",
   "plat.emu": "Emulator",
@@ -475,7 +479,7 @@ function renderRows() {
     <div class="row ${e.soon ? 'soon' : ''} ${open ? 'open' : ''}" data-id="${e.id}">
       <button class="row-main" type="button" ${e.soon ? 'aria-disabled="true"' : `aria-expanded="${open}"`}>
         <span class="pos">${String(i + 1).padStart(2, '0')}</span>
-        <span class="r-name"><b>${e.code}</b><span>${t(`ed.${e.id}.name`)}</span></span>
+        <span class="r-name"><b>${e.code}${e.review ? `<i class="rv">${t('review')}</i>` : ''}</b><span>${t(`ed.${e.id}.name`)}</span></span>
         <span class="r-lang">${t('lang.' + e.lang)}</span>
         <span class="meter">${e.soon ? `<span class="dns">${t('soon')}</span>` : `${cells(e.cover)}<b>${e.cover}%</b>`}</span>
         <span class="r-ver" data-size="${e.size || ''}">${e.ver || '—'}</span>
