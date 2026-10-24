@@ -364,3 +364,16 @@ code { color: var(--amber); background: rgba(255,210,58,.08); border-color: rgba
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* =========================================================
+   배경 기체 (왼쪽 파랑 · 오른쪽 빨강)
+   ========================================================= */
+.mechs { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.mech { position: absolute; width: auto; opacity: .2; }
+.mech-l { left: -3vw; bottom: 0; height: min(84vh, 780px); }
+.mech-r { right: -3vw; bottom: 6vh; height: min(60vh, 560px); }
+@media (max-width: 640px) {
+  .mech { opacity: .12; }
+  .mech-l { left: -18vw; height: 56vh; }
+  .mech-r { right: -22vw; height: 38vh; }
+}
