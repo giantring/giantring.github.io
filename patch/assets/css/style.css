@@ -157,6 +157,7 @@ section.block { padding: 120px 0 40px; }
 .row.open .pos { color: var(--c); }
 .r-name b { display: block; font-family: var(--hud); font-weight: 700; font-size: 1.15rem; letter-spacing: .14em; color: var(--c); }
 .r-name span { font-weight: 700; }
+.r-name .rv { display: inline-block; margin-left: 8px; vertical-align: 2px; font-family: var(--hud); font-style: normal; font-weight: 700; font-size: .62rem; letter-spacing: .16em; color: var(--amber); border: 1px solid color-mix(in srgb, var(--amber) 60%, transparent); padding: 2px 6px; }
 .r-lang { font-size: .85rem; color: var(--dim); }
 .meter { display: flex; align-items: center; gap: 10px; }
 .cells { flex: 1; display: grid; grid-template-columns: repeat(20, 1fr); gap: 2px; height: 12px; }
