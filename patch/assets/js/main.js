@@ -13,16 +13,16 @@ const CONFIG = {
 
 /* 판 정보 (위에서부터 이 순서로 나온다). 새 버전을 올리면 ver·tag·file·size·sha 를 바꾼다 */
 const EDITIONS = [
-  { id: 'miles',  code: 'MILES',  lang: 'ko', ver: 'v4.8',
-    tag: 'miles-v4.8',   file: 'gyrozetter_kr_MILES_v4.8.zip',   size: '3.5 MB', cover: 100,
-    url: 'https://drive.google.com/file/d/1km5d5PAXPAyu-ja96VZRCr0EscZYw7Q0/view?usp=drivesdk',
-    sha: 'ca897b743f46d47198905bda67c7a8d97dcbbda44954ddcdbd1f6a9bf539c4c9', img: 'assets/img/miles.jpg' },
+  { id: 'miles',  code: 'MILES',  lang: 'ko', ver: 'v5.0',
+    tag: 'miles-v5.0',   file: 'gyrozetter_kr_MILES_v5.0.zip',   size: '3.7 MB', cover: 100,
+    url: 'https://drive.google.com/file/d/16IhFd66wN_DxsrKZbAhbncoF2CSoT-aA/view?usp=drivesdk',
+    sha: '', img: 'assets/img/miles.jpg' },
   { id: 'tails',  code: 'TAILS',  lang: 'ko', ver: null, soon: true, img: 'assets/img/tails.jpg' },
-  { id: 'prower', code: 'PROWER', lang: 'en', ver: 'v13.8',
+  { id: 'prower', code: 'PROWER', lang: 'en', ver: 'v14.6',
     review: true,
-    tag: 'prower-v13.8', file: 'gyrozetter_en_PROWER_v13.8.zip', size: '2.5 MB', cover: 100,
-    url: 'https://drive.google.com/file/d/1T-kpzbnxDKaeVt1PY6KW5IYk6-00tXrv/view?usp=drivesdk',   // 외부 링크가 있으면 GitHub 대신 이곳으로 연결
-    sha: '447b30a88ddb15d507c052c56ce4f7065a8a193be6a9a25668760a92b5d719b7', img: 'assets/img/prower.jpg' },
+    tag: 'prower-v14.6', file: 'gyrozetter_en_PROWER_v14.6.zip', size: '2.6 MB', cover: 100,
+    url: 'https://drive.google.com/file/d/1Q0q-KxDIpuz0Myup6R2wjY-VyIM-wyWF/view?usp=drivesdk',   // 외부 링크가 있으면 GitHub 대신 이곳으로 연결
+    sha: '', img: 'assets/img/prower.jpg' },
 ];
 
 /* ============================================================
@@ -492,7 +492,7 @@ function renderRows() {
             <img class="row-thumb" src="${e.img}" alt="" data-optional>
             ${e.soon ? `<span class="go off">${t('soon')}</span>` :
               `<a class="go" href="${url}" ${e.url ? 'target="_blank" rel="noopener"' : `download="${e.file}"`} data-dl="${e.id}">${DL}<span>${t('dl')} · ${e.size}</span></a>
-               <div class="sha"><b>SHA-256</b>${e.sha}</div>`}
+               ${e.sha ? `<div class="sha"><b>SHA-256</b>${e.sha}</div>` : ''}`}
           </div>
         </div>
       </div></div>
