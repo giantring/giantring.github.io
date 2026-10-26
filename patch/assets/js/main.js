@@ -6,7 +6,7 @@ const CONFIG = {
   report: 'https://x.com/giantring9275',       // 제보 받을 곳. 비우면 버튼이 숨는다
   qr: 'https://x.com/giantring9275/status/2112522338843660738',   // '배포 QR 코드' 버튼이 여는 곳. 비우면 버튼이 숨는다
   credits: [                                            // 만든 사람
-    { name: '자트', role: { ko: '번역·검수', ja: '翻訳・校正', en: 'Translation & QA' } },
+    { name: '자트', egg: 'assets/video/SaveTwitter.Net_KljDZUsvHiW_3ApN_(636p).mp4', role: { ko: '번역·검수', ja: '翻訳・校正', en: 'Translation & QA' } },
     { name: 'Claude', role: { ko: '도구·빌드', ja: 'ツール・ビルド', en: 'Tools & build' } },
   ],
 };
@@ -540,7 +540,7 @@ function renderFaq() {
 }
 
 function renderCrew() {
-  $('#crew').innerHTML = CONFIG.credits.map(c => `<div><small>${c.label || c.role.en}</small><b>${c.name}</b> · ${c.role[S.lang] || c.role.en}</div>`).join('');
+  $('#crew').innerHTML = CONFIG.credits.map(c => `<div><small>${c.label || c.role.en}</small>${c.egg ? `<b class="egg" role="button" tabindex="0" data-egg="${c.egg}">${c.name}</b>` : `<b>${c.name}</b>`} · ${c.role[S.lang] || c.role.en}</div>`).join('');
 }
 
 function renderStatic() {
@@ -631,3 +631,24 @@ S.lang = pickLang();
 renderAll();
 wireImages();
 onScroll();
+
+/* 이스터에그: 크레딧에서 이름(egg 가 있는 사람)을 누르면 영상이 열린다 */
+(() => {
+  const crew = $('#crew');
+  if (!crew) return;
+  const open = src => {
+    const box = document.createElement('div');
+    box.className = 'egg-box';
+    box.innerHTML = `<video src="${src}" controls autoplay playsinline></video><button class="egg-x" type="button" aria-label="close">×</button>`;
+    const close = () => { box.remove(); document.removeEventListener('keydown', esc); };
+    const esc = e => { if (e.key === 'Escape') close(); };
+    box.addEventListener('click', e => { if (e.target === box || e.target.classList.contains('egg-x')) close(); });
+    document.addEventListener('keydown', esc);
+    document.body.appendChild(box);
+  };
+  crew.addEventListener('click', e => { const b = e.target.closest('[data-egg]'); if (b) open(b.dataset.egg); });
+  crew.addEventListener('keydown', e => {
+    const b = e.target.closest('[data-egg]');
+    if (b && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(b.dataset.egg); }
+  });
+})();
