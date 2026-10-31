@@ -13,9 +13,9 @@ const CONFIG = {
 
 /* 판 정보 (위에서부터 이 순서로 나온다). 새 버전을 올리면 ver·tag·file·size·sha 를 바꾼다 */
 const EDITIONS = [
-  { id: 'miles',  code: 'MILES',  lang: 'ko', ver: 'v5.0',
-    tag: 'miles-v5.0',   file: 'gyrozetter_kr_MILES_v5.0.zip',   size: '3.7 MB', cover: 100,
-    url: 'https://drive.google.com/file/d/16IhFd66wN_DxsrKZbAhbncoF2CSoT-aA/view?usp=drivesdk',
+  { id: 'miles',  code: 'MILES',  lang: 'ko', ver: 'v5.3',
+    tag: 'miles-v5.3',   file: 'gyrozetter_kr_MILES_v5.3.zip',   size: '3.7 MB', cover: 100,
+    url: 'https://drive.google.com/file/d/1ZyI_1Maz85oT_tUO2aJuHH7jjom-F1nE/view?usp=drivesdk',
     sha: '', img: 'assets/img/miles.jpg' },
   { id: 'tails',  code: 'TAILS',  lang: 'ko', ver: null, soon: true, img: 'assets/img/tails.jpg' },
   { id: 'prower', code: 'PROWER', lang: 'en', ver: 'v14.7',
