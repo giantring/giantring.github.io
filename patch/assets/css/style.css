@@ -385,3 +385,6 @@ code { color: var(--amber); background: rgba(255,210,58,.08); border-color: rgba
 .egg-box { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0, 0, 0, .86); }
 .egg-box video { width: min(1064px, 100%, calc(86vh * 1064 / 636)); aspect-ratio: 1064 / 636; height: auto; border: 1px solid var(--line-2); background: #000; }
 .egg-x { position: absolute; top: 14px; right: 16px; width: 40px; height: 40px; border: 1px solid var(--line-2); background: var(--panel); color: var(--text); font-size: 24px; line-height: 1; cursor: pointer; }
+
+/* 다른 한글패치 보러가기 (결승선) */
+.finish .more { height: 42px; padding: 0 20px; margin: 0 0 20px; font-size: .9rem; }
