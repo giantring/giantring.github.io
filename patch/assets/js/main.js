@@ -5,6 +5,7 @@ const CONFIG = {
   repo: 'giantring/giantring.github.io',                                   // GitHub 계정/저장소
   report: 'https://x.com/giantring9275',       // 제보 받을 곳. 비우면 버튼이 숨는다
   qr: 'https://x.com/giantring9275/status/2112522338843660738',   // '배포 QR 코드' 버튼이 여는 곳. 비우면 버튼이 숨는다
+  more: 'https://x.com/giantring9275',   // '다른 한글패치 보러가기' 버튼이 여는 곳. 비우면 버튼이 숨는다
   credits: [                                            // 만든 사람
     { name: '자트', egg: 'assets/video/SaveTwitter.Net_KljDZUsvHiW_3ApN_(636p).mp4', role: { ko: '번역·검수', ja: '翻訳・校正', en: 'Translation & QA' } },
     { name: 'Claude', role: { ko: '도구·빌드', ja: 'ツール・ビルド', en: 'Tools & build' } },
@@ -163,6 +164,7 @@ const I18N = {
   "start.tag": "NINTENDO 3DS · 비공식 팬 번역",
   "start.cta": "패치 받기",
   "start.qr": "배포 QR 코드",
+  "more": "다른 한글패치 보러가기",
   "grid.title": "버전을 고르세요",
   "grid.lead": "줄을 누르면 다운로드 버튼이 열립니다. 한 번에 한 판만 설치합니다.",
   "pit.title": "설치하기",
@@ -303,6 +305,7 @@ const I18N = {
   "start.tag": "NINTENDO 3DS・非公式ファン翻訳",
   "start.cta": "パッチを入手",
   "start.qr": "配布QRコード",
+  "more": "制作者のほかの翻訳パッチ",
   "grid.title": "版を選んでください",
   "grid.lead": "行を押すとダウンロードボタンが開きます。一度に入れられるのは1つの版だけです。",
   "pit.title": "導入する",
@@ -443,6 +446,7 @@ const I18N = {
   "start.tag": "NINTENDO 3DS · UNOFFICIAL FAN TRANSLATION",
   "start.cta": "Get the patch",
   "start.qr": "Download QR code",
+  "more": "More patches by the translator",
   "grid.title": "Pick an edition",
   "grid.lead": "Tap a row to open the download. Install one edition at a time.",
   "pit.title": "Install",
@@ -624,6 +628,7 @@ addEventListener('resize', onScroll);
 const rb = $('#reportBtn');
 const qb = $('#qrBtn');
 if (CONFIG.qr) qb.href = CONFIG.qr; else qb.remove();
+document.querySelectorAll('[data-more]').forEach(a => { if (CONFIG.more) a.href = CONFIG.more; else a.remove(); });
 if (CONFIG.report) { rb.href = CONFIG.report; rb.target = '_blank'; rb.rel = 'noopener'; } else $('#report').remove();
 
 
