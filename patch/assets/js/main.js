@@ -4,7 +4,7 @@
 const CONFIG = {
   repo: 'giantring/giantring.github.io',                                   // GitHub 계정/저장소
   report: 'https://x.com/giantring9275',       // 제보 받을 곳. 비우면 버튼이 숨는다
-  qr: 'https://x.com/giantring9275/status/2112522338843660738',   // '배포 QR 코드' 버튼이 여는 곳. 비우면 버튼이 숨는다
+  qr: 'https://x.com/giantring9275/status/2101218964835860601',   // '배포 QR 코드' 버튼이 여는 곳. 비우면 버튼이 숨는다
   more: 'https://x.com/giantring9275',   // '다른 한글패치 보러가기' 버튼이 여는 곳. 비우면 버튼이 숨는다
   credits: [                                            // 만든 사람
     { name: '자트', egg: 'assets/video/SaveTwitter.Net_KljDZUsvHiW_3ApN_(636p).mp4', role: { ko: '번역·검수', ja: '翻訳・校正', en: 'Translation & QA' } },
