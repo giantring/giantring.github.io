@@ -3,13 +3,212 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>giantring</title>
-<meta http-equiv="refresh" content="0; url=patch/">
+<title>GIANTRING 한글패치</title>
+<meta name="description" content="giantring(자트)이 만든 비공식 게임 한글 패치 모음">
+<meta property="og:title" content="GIANTRING 한글패치">
+<meta property="og:description" content="giantring(자트)이 만든 비공식 게임 한글 패치 모음">
+<meta property="og:image" content="https://giantring.github.io/patch/assets/img/logo.webp">
+<meta name="theme-color" content="#0d0d12">
 <link rel="icon" href="patch/assets/img/favicon.png">
 <link rel="apple-touch-icon" href="patch/assets/img/apple-touch-icon.png">
-<link rel="canonical" href="https://giantring.github.io/patch/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d12;
+    --panel: #16161e;
+    --line: #2a2a36;
+    --text: #f2f2f5;
+    --muted: #9a9aab;
+    --gyro: #c4222d;
+    --sonic: #1f6fff;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans KR", system-ui, sans-serif;
+    line-height: 1.6;
+    word-break: keep-all;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(60rem 30rem at 10% -10%, rgba(196,34,45,.18), transparent 60%),
+      radial-gradient(60rem 30rem at 100% 0%, rgba(31,111,255,.16), transparent 60%);
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 72px 0 40px; }
+  .eyebrow {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 13px; letter-spacing: .25em; color: var(--muted);
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: "Space Grotesk", "Noto Sans KR", sans-serif;
+    font-size: clamp(40px, 8vw, 76px);
+    font-weight: 700; line-height: 1.05; letter-spacing: -.02em;
+    margin: 12px 0 16px;
+  }
+  h1 span { color: var(--muted); font-weight: 500; }
+  .lead { color: var(--muted); font-size: 17px; max-width: 560px; }
+  .social {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 28px; padding: 10px 18px;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: var(--panel); font-weight: 500; font-size: 15px;
+    transition: border-color .2s, transform .2s;
+  }
+  .social:hover { border-color: #555566; transform: translateY(-1px); }
+  .social svg { width: 16px; height: 16px; fill: currentColor; }
+
+  .section-title {
+    display: flex; align-items: baseline; justify-content: space-between;
+    border-top: 1px solid var(--line); padding-top: 20px; margin: 24px 0 24px;
+  }
+  .section-title h2 { font-size: 20px; font-weight: 700; }
+  .section-title small { color: var(--muted); font-family: "Space Grotesk", sans-serif; letter-spacing: .1em; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+
+  .card {
+    position: relative; display: flex; flex-direction: column;
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--radius); overflow: hidden;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 18px 40px -18px var(--accent); }
+  .card.gyro { --accent: var(--gyro); }
+  .card.sonic { --accent: var(--sonic); }
+
+  .cover { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #000; }
+  .cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+  .card:hover .cover img { transform: scale(1.04); }
+  .cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(22,22,30,.95), transparent 55%); }
+  .cover .logo { position: absolute; left: 20px; bottom: 16px; z-index: 1; max-width: 62%; max-height: 46%; width: auto; height: auto; object-fit: contain; }
+
+
+  /* 소닉 06 — 이미지 없이 그래픽으로 구성한 커버 */
+  .cover.type {
+    background:
+      radial-gradient(circle at 78% 40%, rgba(31,111,255,.55), transparent 45%),
+      repeating-linear-gradient(115deg, #0a1a3d 0 18px, #0c1f4a 18px 36px);
+  }
+  .cover.type .big {
+    position: absolute; right: 18px; top: 50%; transform: translateY(-58%);
+    font-family: "Space Grotesk", sans-serif; font-weight: 700;
+    font-size: clamp(90px, 14vw, 130px); line-height: 1; color: rgba(255,255,255,.92);
+    letter-spacing: -.04em; z-index: 1;
+  }
+  .cover.type.gyro-type {
+    background:
+      radial-gradient(circle at 78% 40%, rgba(196,34,45,.6), transparent 45%),
+      repeating-linear-gradient(115deg, #3a070c 0 18px, #450a10 18px 36px);
+  }
+  .cover.type.gyro-type .big {
+    font-family: "Noto Sans KR", sans-serif; font-weight: 900;
+    font-size: clamp(48px, 8vw, 64px); line-height: 1.05; text-align: right; letter-spacing: -.03em;
+  }
+  .cover.type.gyro-type .tag { color: #ffd6d9; }
+  .cover.type .tag {
+    position: absolute; left: 20px; bottom: 18px; z-index: 1;
+    font-family: "Space Grotesk", sans-serif; font-size: 13px; letter-spacing: .2em; color: #cfe0ff;
+  }
+
+  .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--muted);
+  }
+  .chip.accent { border-color: var(--accent); color: var(--text); background: color-mix(in srgb, var(--accent) 18%, transparent); }
+  .card h3 { font-size: 21px; font-weight: 900; line-height: 1.35; }
+  .card h3 small { display: block; font-size: 13px; font-weight: 500; color: var(--muted); font-family: "Space Grotesk", sans-serif; letter-spacing: .04em; margin-top: 2px; }
+  .card p { color: var(--muted); font-size: 15px; }
+  .cta {
+    margin-top: auto; padding-top: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 700; color: var(--accent);
+    filter: brightness(1.35);
+  }
+  .cta .arrow { transition: transform .2s; }
+  .card:hover .cta .arrow { transform: translateX(4px); }
+  .card a.stretch::after { content: ""; position: absolute; inset: 0; }
+
+  footer {
+    border-top: 1px solid var(--line); margin-top: 72px; padding: 28px 0 48px;
+    color: var(--muted); font-size: 13px; line-height: 1.8;
+  }
+  footer a { text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    header { padding: 48px 0 28px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-<p><a href="patch/">자이로제타 번역 패치 페이지로 이동</a></p>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Unofficial Fan Translations</div>
+      <h1>GIANTRING<br><span>한글패치</span></h1>
+      <a class="social" href="https://x.com/giantring9275" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @giantring9275
+      </a>
+    </header>
+
+    <div class="section-title">
+      <h2>패치 목록</h2>
+      <small>2 PATCHES</small>
+    </div>
+
+    <main class="grid">
+      <!-- 01. 자이로제타 -->
+      <article class="card gyro">
+        <div class="cover type gyro-type">
+          <div class="big">자이로<br>제타</div>
+          <div class="tag">HYPER SPEED TRANSFORM</div>
+        </div>
+        <div class="body">
+          <div class="meta">
+            <span class="chip accent">NINTENDO 3DS</span>
+            <span class="chip">한국어 · 영어</span>
+            <span class="chip">실기 · 에뮬레이터</span>
+          </div>
+          <h3>초속변형 자이로제타 알바로스의 날개<small>Hyper Speed Transform Gyrozetter</small></h3>
+          <p>3DS 「초속변형 자이로제타 알바로스의 날개」의 비공식 한국어·영문 패치입니다.</p>
+          <a class="cta stretch" href="https://giantring.github.io/patch/">패치 페이지로 <span class="arrow">→</span></a>
+        </div>
+      </article>
+
+      <!-- 02. 소닉 06 -->
+      <article class="card sonic">
+        <div class="cover type">
+          <div class="big">06</div>
+          <div class="tag">MARATHON RECOMPILED</div>
+        </div>
+        <div class="body">
+          <div class="meta">
+            <span class="chip accent">v1.0.0</span>
+            <span class="chip">Windows · macOS · Linux</span>
+            <span class="chip">웹 패처</span>
+          </div>
+          <h3>소닉 더 헤지혹 (2006) 한글패치<small>Sonic the Hedgehog (2006) · Marathon Recompiled</small></h3>
+          <p>마라톤 리컴파일용 한글패치. 대사·자막·게임 메뉴를 한국어로 옮겼고, 윈도우에서는 리컴파일 메뉴까지 한글화됩니다.</p>
+          <a class="cta stretch" href="https://giantring.github.io/06patch/">패치 페이지로 <span class="arrow">→</span></a>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      모든 패치는 비공식 팬 번역이며, 원작 게임사 및 관련 개발자와 무관합니다. 패치에는 게임 파일이 포함되어 있지 않으며, 정품을 소유한 분만 이용해 주세요.<br>
+      번역 오류 제보 · 문의: <a href="https://x.com/giantring9275" target="_blank" rel="noopener">X @giantring9275</a>
+    </footer>
+  </div>
 </body>
 </html>
