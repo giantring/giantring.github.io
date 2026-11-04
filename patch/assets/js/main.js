@@ -96,7 +96,7 @@ const I18N = {
    ],
    [
     "SD카드에 복사",
-    "안에 있는 <code>luma</code> 폴더를 SD카드 맨 위(루트)에 복사합니다. 이미 <code>luma</code> 폴더가 있으면 덮어쓰지 말고 병합하세요.<br><code class=\"path\">sd:/luma/titles/0004000000059C00/romfs/</code>"
+    "압축을 푼 폴더의 <code>luma</code> 안에 있는 <code>titles</code> 폴더를 SD카드의 <code>luma</code> 폴더 안에 넣습니다. SD카드에 <code>luma</code> 폴더가 없다면 맨 위(루트)에 새로 만드세요.<br><code class=\"path\">sd:/luma/titles/0004000000059C00/romfs/</code>"
    ],
    [
     "Luma3DS 설정 열기",
@@ -237,7 +237,7 @@ const I18N = {
    ],
    [
     "SDカードにコピー",
-    "中にある <code>luma</code> フォルダをSDカードのいちばん上(ルート)にコピーします。すでに <code>luma</code> フォルダがある場合は、置き換えずに統合してください。<br><code class=\"path\">sd:/luma/titles/0004000000059C00/romfs/</code>"
+    "解凍したフォルダの <code>luma</code> の中にある <code>titles</code> フォルダを、SDカードの <code>luma</code> フォルダの中に入れます。SDカードに <code>luma</code> フォルダがない場合は、いちばん上(ルート)に新しく作ってください。<br><code class=\"path\">sd:/luma/titles/0004000000059C00/romfs/</code>"
    ],
    [
     "Luma3DSの設定を開く",
@@ -378,7 +378,7 @@ const I18N = {
    ],
    [
     "Copy to the SD card",
-    "Copy the <code>luma</code> folder inside to the root of your SD card. If a <code>luma</code> folder is already there, merge it rather than replacing it.<br><code class=\"path\">sd:/luma/titles/0004000000059C00/romfs/</code>"
+    "Put the <code>titles</code> folder from inside the extracted <code>luma</code> folder into the <code>luma</code> folder on your SD card. If your SD card has no <code>luma</code> folder, create one at the root first.<br><code class=\"path\">sd:/luma/titles/0004000000059C00/romfs/</code>"
    ],
    [
     "Open Luma3DS settings",
