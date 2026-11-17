@@ -19,10 +19,10 @@ const EDITIONS = [
     url: 'https://drive.google.com/file/d/1_BiDpIQSDtbdypw93XurP94L2IMCe3Nm/view?usp=drivesdk',
     sha: '', img: 'assets/img/miles.jpg' },
   { id: 'tails',  code: 'TAILS',  lang: 'ko', ver: null, soon: true, img: 'assets/img/tails.jpg' },
-  { id: 'prower', code: 'PROWER', lang: 'en', ver: 'v14.7',
+  { id: 'prower', code: 'PROWER', lang: 'en', ver: 'v14.8',
     review: true,
-    tag: 'prower-v14.7', file: 'gyrozetter_en_PROWER_v14.7.zip', size: '2.6 MB', cover: 100,
-    url: 'https://drive.google.com/file/d/1ilINuxif36QRbtjFq1u3_oK88sJgNxho/view?usp=drivesdk',   // 외부 링크가 있으면 GitHub 대신 이곳으로 연결
+    tag: 'prower-v14.8', file: 'gyrozetter_en_PROWER_v14.8.zip', size: '2.6 MB', cover: 100,
+    url: 'https://drive.google.com/file/d/1vydXawfcBXLUCdeEPm0Jx14WVQfb0bcs/view?usp=drivesdk',   // 외부 링크가 있으면 GitHub 대신 이곳으로 연결
     sha: '', img: 'assets/img/prower.jpg' },
 ];
 
